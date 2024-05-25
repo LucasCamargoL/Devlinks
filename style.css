@@ -97,14 +97,20 @@ body * {
     position: absolute;
     top: 50%;
     /* transform: translate y nesse caso move o objeto button entre o eixo y da caixa switch */
-    transform: translateY(-50%);
     left: 0;
     z-index: 1;
+    transform: translateY(-50%);
+
+    animation: slide-back 0.4s;
 }
 
 .light #switch button {
-    right: 0;
-    left: initial;
+    /* o forwards fala que ao terminar, não recomeça*/
+    animation: slide-in 0.4s forwards;
+}
+
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -188,9 +194,29 @@ footer {
 @media (min-width: 700px) {
     :root {
         --bg-url: url(./assets/bg-desktop.jpg)
+        
     }
 
     .light {
         --bg-url: url(./assets/bg-desktop-light.jpg)
+    }
+}
+
+/* animações */
+@keyframes slide-in {
+    fron {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    fron {
+        left: 50%;
+    }
+    to {
+        left: 0%;
     }
 }
