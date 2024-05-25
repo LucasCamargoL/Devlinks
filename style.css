@@ -47,7 +47,8 @@ body * {
 
 
 #container {
-    width: 360px;
+    width: 100%;
+    max-width: 588px;
     /* border: largura, solida, cor */
     margin: 56px auto 0px;
     /*paddin com 3 propriedades: cima, lados, baixo*/
