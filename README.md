@@ -20,6 +20,9 @@ Projeto realizado com o propósito de aprender o básico sobre as linguagens uti
 <p align="center">
   <img alt="Preview projeto" src=".github/imagem-projeto-links.png" width="100%">
 </p>
+<p align="center">
+  <img alt="Preview projeto lightmode" src=".github/imagem-projeto-links-lightmode.png" width="50%">
+</p>
 
 ## 🚀 Tecnologias
 
