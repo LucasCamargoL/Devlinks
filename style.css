@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* dark mode*/
+:root {
+    --text-color: white;
+    --bg-url: url(./assets/bg-mobile.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.05);
+    -surface-color-hover: rgba(255, 255, 255, 0.02);
+    --highlight-color: rgba(255, 255, 255, 0.1);
+    --switch-bg-url: url(./assets/moon-stars.svg)
+}
+
+/* light mode*/
+.light {
+    --text-color: black;
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    -surface-color-hover: rgba(255, 255, 255, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(./assets/sun.svg)
+}
+
+body {
+    /*
+    background-image: url(./assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    */
+
+    /*SHORTHAND: condensando os backgrounds commands:*/
+    /*GUIA: background: color image repeat position/size */
+
+    background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+    font-family: "Inter", sans-serif;
+    color: var(--text-color)
+}
+
+
+#container {
+    width: 360px;
+    /* border: largura, solida, cor */
+    margin: 56px auto 0px;
+    /*paddin com 3 propriedades: cima, lados, baixo*/
+
+    padding: 0px 24px;
+
+}
+
+
+/*profile*/
+#profile {
+    text-align: center;
+    padding: 24px;
+}
+
+#profile img {
+    width: 112px;
+}
+
+#profile p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+/*switch*/
+#switch {
+    position: relative;
+    width: 64px;
+    margin: 4px auto;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+
+
+    /*PARA SOBREPOR E ALINHAR POSICIONAMENTO ABSOLUTO*/
+    position: absolute;
+    top: 50%;
+    /* transform: translate y nesse caso move o objeto button entre o eixo y da caixa switch */
+    transform: translateY(-50%);
+    left: 0;
+    z-index: 1;
+}
+
+.light #switch button {
+    right: 0;
+    left:initial;
+}
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 9999px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+/*links*/
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /*gap coloca espaço ENTRE os elementos, aqui o espaço é de 8px */
+
+    padding: 24px 0;
+}
+
+ul li a {
+    /* alinhamento central da lista na caixa */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px 24px;
+    /* fundo e borda elementos da lista*/
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    /* decoraçao do texto da lista */
+    text-decoration: none;
+    font-weight: 500;
+
+    /*transition: o que se quer transicionar / tempo que leva  */
+    transition: background 0.2s;
+}
+
+/* esse hover é um pseudo-selector, funciona passando o mouse em cima do elemento */
+ul li a:hover {
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+}
+
+#social-links {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+    font-size: 24px;
+}
+
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    transition: background 0.2s;
+    border-radius: 50%;
+}
+
+#social-links a:hover {
+    background: var(--highlight-color);
+}
+
+footer {
+    justify-content: center;
+    padding: 24px 0;
+    text-align: center;
+    font-size: 14px;
+}
